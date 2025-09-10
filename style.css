@@ -1,0 +1,77 @@
+/* Part 1: CSS Transitions and Animations */
+
+/* Basic styles */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f0f4f8;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+/* Button styles */
+.btn {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+
+  /* Transition for smooth hover */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+  transform: scale(1.1);
+}
+
+/* Boxes */
+.box {
+  width: 150px;
+  height: 150px;
+  margin: 30px auto;
+  background-color: #e67e22;
+  border-radius: 10px;
+}
+
+/* Continuous pulse animation */
+@keyframes pulseAnimation {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(230, 126, 34, 0.7);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(230, 126, 34, 1);
+  }
+}
+
+.pulse {
+  animation: pulseAnimation 2s infinite;
+}
+
+/* Animation triggered by JS */
+@keyframes bounceIn {
+  0% {
+    transform: translateY(200px) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.bounce-in {
+  animation: bounceIn 0.6s forwards;
+}
